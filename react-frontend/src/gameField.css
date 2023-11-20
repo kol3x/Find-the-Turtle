@@ -1,0 +1,70 @@
+.circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  border: 2px solid black;
+}
+
+.choice {
+  position: absolute;
+  border: 2px solid black;
+  flex-direction: column;
+}
+
+.choice > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.choice > form > button {
+  font-size: 20px;
+}
+
+
+.main {
+  display: grid;
+}
+
+.startButton {
+  justify-self: center;
+  width: 480px;
+  height: 200%;
+}
+
+.gameField {
+  display: grid;
+}
+
+.gameField > h1 {
+  justify-self: center;
+}
+
+.userForm {
+  justify-self: center;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.userForm > input {
+  width: 320px;
+  height: 40px;
+  font-size: 28px;
+  text-align: center;
+}
+
+.allRecords {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.singleRecord {
+  border: 1px solid black;
+  text-align: center;
+}
+
+.recordTitle {
+  text-align: center;
+}

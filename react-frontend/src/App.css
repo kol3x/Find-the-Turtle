@@ -1,0 +1,31 @@
+#root {
+  margin: 0px;
+}
+
+body {
+  margin: 0px;
+}
+
+img {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.menu {
+  grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+}
+
+.timer {
+  justify-self: center;
+  font-size: 10px;
+}
+
+button {
+  border: none;
+  font-size: 25px;
+}

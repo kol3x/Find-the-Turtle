@@ -1,0 +1,28 @@
+const express = require("express");
+const mongoose = require("mongoose");
+const cors = require("cors");
+const { URI } = require("./config/index");
+const indexRouter = require("./routes/index");
+
+const mongoDb = URI;
+mongoose.connect(mongoDb);
+const db = mongoose.connection;
+db.on("error", console.error.bind(console, "mongo connection error"));
+
+app = express();
+
+const corsOptions = {
+  origin: ["http://localhost:5173", "http://localhost:5174"],
+  credentials: true,
+};
+
+app.use(cors(corsOptions));
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+app.use("/", indexRouter);
+
+app.listen(5005);
+
+module.exports = app;
