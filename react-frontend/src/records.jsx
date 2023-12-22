@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 
+const BACKEND_URL = process.env.BACKEND_URL;
+
 function Records({ gameOver, records }) {
   const [allRecords, setAllRecords] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch(`${BACKEND_URL}/records)`);
+      const response = await fetch(`${BACKEND_URL}/records`);
       const recs = await response.json();
       setAllRecords(recs);
     };
@@ -13,19 +15,18 @@ function Records({ gameOver, records }) {
   }, [gameOver, records]);
 
   if (!allRecords.length) {
-    return (
-      <h2>No records yet</h2>
-    )
+    return <h2>No records yet</h2>;
   }
   return (
     <div className="allRecords">
       <h1 className="recordTitle">Records: </h1>
-      {allRecords && allRecords.map(record => (
-        <div className="singleRecord" key={record._id}>
-          <h2>User: {record.username}</h2>
-          <h2>Time: {record.timer}</h2>
-        </div>
-      ))}
+      {allRecords &&
+        allRecords.map((record) => (
+          <div className="singleRecord" key={record._id}>
+            <h2>User: {record.username}</h2>
+            <h2>Time: {record.timer}</h2>
+          </div>
+        ))}
     </div>
   );
 }

@@ -5,6 +5,8 @@ import { clearSelection } from "./utils";
 import Timer from "./timer";
 import Records from "./records";
 
+const BACKEND_URL = process.env.BACKEND_URL;
+
 function App() {
   const [gameOver, setGameOver] = useState(false);
   const [update, setUpdate] = useState(0);

@@ -2,6 +2,8 @@ import { useState } from "react";
 import "./gameField.css";
 import { clearSelection } from "./utils";
 
+const BACKEND_URL = process.env.BACKEND_URL;
+
 function GameField({
   setUpdate,
   options,
@@ -95,7 +97,7 @@ function GameField({
         <form
           className="userForm"
           onSubmit={async (e) => {
-            e.preventDefault(); 
+            e.preventDefault();
             try {
               await fetch(`${BACKEND_URL}/add-record`, {
                 method: "POST",
@@ -108,7 +110,7 @@ function GameField({
                   timer: timer,
                 }),
               });
-          
+
               setGameStarted(false);
               clearSelection();
             } catch (error) {
@@ -116,7 +118,13 @@ function GameField({
             }
           }}
         >
-          <input type="text" placeholder="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)}></input>
+          <input
+            type="text"
+            placeholder="username"
+            name="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          ></input>
           <button type="submit">SAVE</button>
         </form>
       </div>
