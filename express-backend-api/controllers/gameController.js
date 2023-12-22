@@ -73,7 +73,6 @@ exports.saveRecord = [
       timer: req.body.timer,
     });
     await record.save();
-    console.log("saved");
     return res.status(200).send("Record saved");
   }),
 ];

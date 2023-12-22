@@ -57,7 +57,7 @@ function GameField({
       optionForm.appendChild(characterButton);
       optionForm.onsubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("http://localhost:5005/turn", {
+        const response = await fetch(`${BACKEND_URL}/turn`, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
@@ -97,7 +97,7 @@ function GameField({
           onSubmit={async (e) => {
             e.preventDefault(); 
             try {
-              await fetch("http://localhost:5005/add-record", {
+              await fetch(`${BACKEND_URL}/add-record`, {
                 method: "POST",
                 headers: {
                   "Content-Type": "application/json",

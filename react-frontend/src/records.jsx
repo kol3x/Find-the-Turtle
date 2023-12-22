@@ -5,7 +5,7 @@ function Records({ gameOver, records }) {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:5005/records");
+      const response = await fetch(`${BACKEND_URL}/records)`);
       const recs = await response.json();
       setAllRecords(recs);
     };

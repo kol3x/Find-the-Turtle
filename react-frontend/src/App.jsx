@@ -14,7 +14,7 @@ function App() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:5005/update");
+      const response = await fetch(`${BACKEND_URL}/update`);
       const data = await response.json();
       const choices = data.choices;
       setOptions(choices);
@@ -24,7 +24,7 @@ function App() {
   }, [update]);
 
   async function gameStart() {
-    const response = await fetch("http://localhost:5005/start");
+    const response = await fetch(`${BACKEND_URL}/start`);
     const data = await response.json();
     const choices = data.choices;
     setOptions(choices);
