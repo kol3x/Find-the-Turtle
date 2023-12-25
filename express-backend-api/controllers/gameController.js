@@ -65,7 +65,6 @@ exports.saveRecord = [
   asyncHandler(async (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      console.log("failed validation")
       return res.send(`FAILED. ERROR LOG: ${errors}`);
     }
     const record = new Record({

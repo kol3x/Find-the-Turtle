@@ -84,7 +84,6 @@ function GameField({
     // Append circle and choice window
     document.body.appendChild(circle);
     document.body.appendChild(choice);
-    console.log(x, y);
   }
 
   if (gameOver) {
