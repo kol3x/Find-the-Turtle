@@ -12,7 +12,7 @@ db.on("error", console.error.bind(console, "mongo connection error"));
 const app = express();
 
 const corsOptions = {
-  origin: "http://localhost:5173",
+  origin: FRONTEND_URL,
   credentials: true,
 };
 
